@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GALAXY</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #020617;
+            color: white;
+            overflow: hidden;
+        }
+
+
+
+        .page1 {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 20% 20%, #312e81, transparent 30%),
+                radial-gradient(circle at 80% 80%, #164e63, transparent 30%),
+                #020617;
+        }
+
+
+        .box {
+            padding: 60px 40px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 0 50px rgba(99,102,241,0.3);
+
+            position: relative;
+            z-index: 5;
+        }
+
+
+        h1 {
+            font-size: 70px;
+
+            letter-spacing: 8px;
+
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #c084fc,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .intro {
+            color: #cbd5e1;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 35px;
+        }
+
+
+        .enter {
+
+            padding: 15px 35px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7c3aed,
+                    #0891b2
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .enter:hover {
+
+            transform: scale(1.08);
+
+            box-shadow:
+                0 0 30px #8b5cf6;
+        }
+
+
+
+        .meteor {
+
+            position: absolute;
+
+            top: -100px;
+
+            right: 10%;
+
+            font-size: 55px;
+
+            z-index: 3;
+
+            animation:
+                meteorFall 1.2s linear infinite;
+
+            filter:
+                drop-shadow(0 0 10px white)
+                drop-shadow(0 0 25px #f97316);
+
+        }
+
+
+        @keyframes meteorFall {
+
+            0% {
+
+                top: -100px;
+
+                right: 10%;
+
+                transform: rotate(0deg);
+
+                opacity: 0;
+
+            }
+
+            10% {
+
+                opacity: 1;
+
+            }
+
+            50% {
+
+                right: 35%;
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                top: 110vh;
+
+                right: 70%;
+
+                transform: rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+
+        .meteor2 {
+
+            position: absolute;
+
+            top: -100px;
+
+            right: 40%;
+
+            font-size: 35px;
+
+            z-index: 2;
+
+            animation:
+                meteorFall2 2s linear infinite;
+
+            animation-delay: 0.5s;
+
+            filter:
+                drop-shadow(0 0 8px white)
+                drop-shadow(0 0 20px #8b5cf6);
+
+        }
+
+
+        @keyframes meteorFall2 {
+
+            0% {
+
+                top: -100px;
+
+                right: 40%;
+
+                opacity: 0;
+
+            }
+
+            10% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                top: 110vh;
+
+                right: 85%;
+
+                transform: rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+
+        .page2 {
+
+            display: none;
+
+            height: 100vh;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 50% 50%, #312e81, transparent 25%),
+                radial-gradient(circle at 10% 90%, #164e63, transparent 30%),
+                #020617;
+
+        }
+
+
+
+        .star {
+
+            position: absolute;
+
+            top: -30px;
+
+            color: white;
+
+            font-size: 20px;
+
+            animation:
+                fall 2s linear infinite;
+
+        }
+
+
+        @keyframes fall {
+
+            0% {
+
+                transform:
+                    translateY(-50px)
+                    rotate(0deg);
+
+                opacity: 0;
+
+            }
+
+            10% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        .star:nth-child(1) {
+            left: 5%;
+            animation-duration: 1.5s;
+        }
+
+        .star:nth-child(2) {
+            left: 12%;
+            animation-duration: 2s;
+            animation-delay: 0.2s;
+        }
+
+        .star:nth-child(3) {
+            left: 20%;
+            animation-duration: 1.7s;
+            animation-delay: 0.4s;
+        }
+
+        .star:nth-child(4) {
+            left: 30%;
+            animation-duration: 2.2s;
+            animation-delay: 0.2s;
+        }
+
+        .star:nth-child(5) {
+            left: 40%;
+            animation-duration: 1.5s;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(6) {
+            left: 50%;
+            animation-duration: 2s;
+        }
+
+        .star:nth-child(7) {
+            left: 60%;
+            animation-duration: 1.7s;
+            animation-delay: 0.4s;
+        }
+
+        .star:nth-child(8) {
+            left: 70%;
+            animation-duration: 2.2s;
+            animation-delay: 0.2s;
+        }
+
+        .star:nth-child(9) {
+            left: 80%;
+            animation-duration: 1.5s;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(10) {
+            left: 90%;
+            animation-duration: 2s;
+        }
+
+
+
+        .message {
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 85%;
+            max-width: 650px;
+
+            padding: 50px 35px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(15px);
+
+            border:
+                1px solid rgba(255,255,255,0.2);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 0 60px rgba(139,92,246,0.3);
+
+            animation: appear 2s ease;
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -40%)
+                    scale(0.8);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+
+            }
+
+        }
+
+
+        .message h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 25px;
+
+            color: #c084fc;
+        }
+
+
+        .message p {
+
+            color: #dbeafe;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+        }
+
+
+        .back {
+
+            margin-top: 30px;
+
+            padding: 10px 25px;
+
+            border: 1px solid #8b5cf6;
+
+            background: transparent;
+
+            color: white;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+        }
+
+
+
+        @media(max-width:600px) {
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .box {
+                width: 90%;
+                padding: 45px 20px;
+            }
+
+            .intro {
+                font-size: 15px;
+            }
+
+            .message {
+                padding: 40px 20px;
+            }
+
+            .message h2 {
+                font-size: 28px;
+            }
+
+            .message p {
+                font-size: 17px;
+            }
+
+            .meteor {
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+    <div class="page1" id="page1">
+
+
+        <!-- FAST METEORS -->
+
+        <div class="meteor">☄️</div>
+
+        <div class="meteor2">☄️</div>
+
+
+
+        <div class="box">
+
+            <h1>GALAXY</h1>
+
+            <p class="intro">
+
+                Somewhere between the stars,
+                there is always something waiting
+                to be discovered.
+
+            </p>
+
+            <button class="enter" onclick="enterGalaxy()">
+
+                ENTER THE UNKNOWN ✦
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="page2" id="page2">
+
+
+
+        <div class="star">✦</div>
+        <div class="star">✧</div>
+        <div class="star">✦</div>
+        <div class="star">✧</div>
+        <div class="star">✦</div>
+        <div class="star">✧</div>
+        <div class="star">✦</div>
+        <div class="star">✧</div>
+        <div class="star">✦</div>
+        <div class="star">✧</div>
+
+
+
+        <div class="message">
+
+            <h2>✨ A Thought From The Stars</h2>
+
+            <p>
+                    Some things are worth waiting for.
+                    <br>
+                      Sometimes, the right person comes into your life
+                    <br>
+                       at exactly the right time. ✨
+                    <br>
+                       Until then, enjoy your life and let things unfold naturally. 🌙
+                     </p>
+
+            <button class="back" onclick="goBack()">
+
+                ← Back
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <script>
+
+        function enterGalaxy() {
+
+            document.getElementById("page1").style.display = "none";
+
+            document.getElementById("page2").style.display = "block";
+
+        }
+
+
+        function goBack() {
+
+            document.getElementById("page2").style.display = "none";
+
+            document.getElementById("page1").style.display = "flex";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
